@@ -3,16 +3,15 @@
 // Description: Chapter 9 Solution
 
 #include "input.h"
+#include "driver1.h"
+#include "driver2.h"
+#include "driver3.h"
 #include <iostream>
 using namespace std;
 
 //Precondition: N/A
 //Postcondition: Prints menu and returns user int option selected
 int menuOption();
-
-void option1() {};
-void option2() {};
-void option3() {};
 
 // driver function/program
 int main()
