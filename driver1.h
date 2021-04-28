@@ -20,10 +20,11 @@ void option1()
 {
 	srand(time(0));
 	int highRange = rand() % 100 + 1;
-	cout << "\n\tThink of a number from 1 to " << highRange << "...\n\n";
+	cout << "\n\t1> Guess your number between 1 to " << highRange << ".\n\n";
+	cout << "\n\tThink of a number from 1 to " << highRange << "...\n\n\t";
 	system("pause");
 
-	cout << "InterativeGuessing function...\n";
+	/*cout << "InterativeGuessing function...\n";
 	IterativeGuessing(1, highRange);
 
 	int count = 0;
@@ -35,9 +36,11 @@ void option1()
 	cout << "InterativeGuessing class function...\n";
 	test.InterativeGuess(1, highRange);
 
-	test.resetCount();
+	test.resetCount();*/
 
-	cout << "RecursiveGuessing class function...\n";
+	GuessNumber test;
+
+	cout << "\n\tRecursiveGuessing class function...\n";
 	test.RecursiveGuessing(1, highRange);
 }
 

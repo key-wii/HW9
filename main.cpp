@@ -26,7 +26,7 @@ int main()
 		case 3:  system("cls"); option3(); break;
 		default: cout << "\t\t    ERROR-Invalid Option. Please re-enter."; break;
 		}
-		cout << '\n';
+		cout << "\n\t";
 		system("pause");
 	} while (true);
 	return 0;

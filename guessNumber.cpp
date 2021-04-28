@@ -45,22 +45,22 @@ void GuessNumber::RecursiveGuessing(int low, int high)
 
 	if (low >= high)			//base or stopping case
 	{
-		cout << "\nYour number must to be " << low << ".";
-		cout << "\nNumber of guesses: " << count << "\n\n";
+		cout << "\n\tYour number must to be " << low << ".";
+		cout << "\n\tNumber of guesses: " << count << "\n\n";
 		return;
 	}
 
 	int midpoint = (low + high) / 2;
-	char answer = toupper(inputChar("\nIs your number " + to_string(midpoint) + "? (Y-yes or N-no) ", "YN"));
+	char answer = toupper(inputChar("\n\tIs your number " + to_string(midpoint) + "? (Y-yes or N-no) ", "YN"));
 	if (answer == 'Y')			//base or stopping case
 	{
-		cout << "\nYour number has been guessed to be " << midpoint << ".";
-		cout << "\nNumber guesses: " << count << "\n\n";
+		cout << "\n\tYour number has been guessed to be " << midpoint << ".";
+		cout << "\n\tNumber guesses: " << count << "\n\n";
 		return;
 	}
 	else
 	{
-		answer = toupper(inputChar("\nIs your number larger than " + to_string(midpoint) + "? (Y-yes or N-no) ", "YN"));
+		answer = toupper(inputChar("\n\tIs your number larger than " + to_string(midpoint) + "? (Y-yes or N-no) ", "YN"));
 		if (answer == 'Y')
 			RecursiveGuessing(midpoint + 1, high); //recursive call
 		else
