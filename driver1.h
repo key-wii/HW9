@@ -1,4 +1,4 @@
-// Participants: 
+// Participants: Gabriela Lopez
 // Date: 04-23-21
 // Description: file containing Drivers for option1(GuessNumber)
 #pragma once
