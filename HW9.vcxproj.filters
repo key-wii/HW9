@@ -18,12 +18,24 @@
     <ClInclude Include="input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="driver1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="driver3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="guessNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GuessNumber.cpp">
+    <ClCompile Include="guessNumber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

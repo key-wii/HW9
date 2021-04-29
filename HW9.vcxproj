@@ -139,10 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="driver1.h" />
+    <ClInclude Include="driver2.h" />
+    <ClInclude Include="driver3.h" />
+    <ClInclude Include="guessNumber.h" />
     <ClInclude Include="input.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GuessNumber.cpp" />
+    <ClCompile Include="guessNumber.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
