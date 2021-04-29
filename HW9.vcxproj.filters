@@ -33,6 +33,9 @@
     <ClInclude Include="nqueens.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TowerOfHanoi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="nqueens.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TowerOfHanoi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

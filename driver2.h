@@ -1,30 +1,31 @@
-// Participants: Gia Minh Hoang
+// Participants: Gia Minh Hoang, Thien Vu
 // Date: 04-23-21
 // Description: file containing Drivers for option2(TowerOfHanoi)
 #pragma once
 #include <iostream>
 #include "input.h"
+#include <stack>
+#include "TowerOfHanoi.h"
 
-
-void theTower(int numberOfDisk, string postA, string postB, string sparePost);
+using namespace std;
 
 //Precondition: N/A
 //Postcondition: contains driver for TowerOfHanoi
 void option2()
 {
-	int input = inputInteger("\Enter number of disk(s): ", true);
+	stack <int> towerA, towerB, towerC;
+	int count = 0;
 
-	theTower(input, "Post A", "Post B", "Spare Post");
-}
-
-void theTower(int numberOfDisk, string postA, string postB, string sparePost)
-{
-	if (numberOfDisk == 1)
-		cout << "Disk " << numberOfDisk << " was moved from " << postA << " to " << postB << "\n";
-	else
+	int input = inputInteger("\n\tEnter the number of rings (1..64): ", 1, 64);
+	for (int i = input; i > 0; i--)
 	{
-		theTower(numberOfDisk - 1, postA, sparePost, postB);
-		cout << "Disk " << numberOfDisk << " was moved from " << postA << " to " << postB << "\n";
-		theTower(numberOfDisk - 1, sparePost, postA, postB);
+		towerA.push(i);
 	}
+
+	cout << "\n\tTower of Hanoi\n";
+	printTowers(input, towerA, towerB, towerC);
+
+	towerOfHanoi(input, input, 'A', 'B', 'C', towerA, towerB, towerC, count);
+
+	cout << "\n\tThe computer has solved the game in " << count << " moves\n";
 }

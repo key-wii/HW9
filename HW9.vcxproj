@@ -145,11 +145,13 @@
     <ClInclude Include="guessNumber.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="nqueens.h" />
+    <ClInclude Include="TowerOfHanoi.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="guessNumber.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="nqueens.cpp" />
+    <ClCompile Include="TowerOfHanoi.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
