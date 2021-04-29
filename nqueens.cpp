@@ -1,0 +1,165 @@
+// Participants: Christopher
+// Date: 04-23-21
+// Description: nqueen implementation
+
+#include "nqueens.h"/*
+#include <algorithm>
+#include <array>
+#include <thread>*/
+
+/*Nqueen::Nqueen(std::vector<std::vector<int>> board) :board{ board }
+{}*/
+
+/*bool Nqueen::isConflict()
+{
+	std::vector<bool> possibilities;
+	possibilities.reserve(10);
+	for (const auto& col : board)
+	{
+		if (
+			std::all_of(col.begin(), col.end(), [](bool e) {return !e; })
+			) continue;
+		int y = std::distance(col.begin(), std::find(col.begin(), col.end(), true));
+		int x = &col - &board[0];
+
+		possibilities.push_back(isPathFree(x, y, TF(v + 1), TF(v)));
+		possibilities.push_back(isPathFree(x, y, TF(v - 1), TF(v)));
+		possibilities.push_back(isPathFree(x, y, TF(v), TF(v + 1)));
+		possibilities.push_back(isPathFree(x, y, TF(v), TF(v - 1)));
+		possibilities.push_back(isPathFree(x, y, TF(v + 1), TF(v + 1)));
+		possibilities.push_back(isPathFree(x, y, TF(v - 1), TF(v - 1)));
+		possibilities.push_back(isPathFree(x, y, TF(v + 1), TF(v - 1)));
+		possibilities.push_back(isPathFree(x, y, TF(v - 1), TF(v + 1)));
+	}
+	return std::any_of(possibilities.begin(), possibilities.end(),
+		[](bool e) {return !e; });
+}
+
+bool Nqueen::isConflictFast(int y, int x, std::vector<std::vector<int>>& board)
+{
+	std::array<bool, 8> possibilities;
+	for (int i = 0; i < 8; i++) possibilities[i] = true;
+	possibilities[0] = (isPathFree(x, y, TF(v + 1), TF(v)));
+	possibilities[1] = (isPathFree(x, y, TF(v - 1), TF(v)));
+	//possibilities[2] = (isPathFree(x, y, TF(v), TF(v + 1)));
+	possibilities[3] = (isPathFree(x, y, TF(v), TF(v - 1)));
+	//possibilities[4] = (isPathFree(x, y, TF(v + 1), TF(v + 1)));
+	possibilities[5] = (isPathFree(x, y, TF(v - 1), TF(v - 1)));
+	possibilities[6] = (isPathFree(x, y, TF(v + 1), TF(v - 1)));
+	//possibilities[7] = (isPathFree(x, y, TF(v - 1), TF(v + 1)));
+	return std::any_of(
+		possibilities.begin(), possibilities.end(),
+		[](bool e) {return !e; }
+	);
+}*/
+
+
+/*bool Nqueen::solve()
+{
+	std::stack<int> col;
+
+	col.push(0);
+
+	while (!col.empty())
+	{
+		int row_ = col.top();
+		int col_ = col.size() - 1;
+		// std::cout << isConflictFast(col_, row_, board) << " " << col_ << " " << row_ << std::endl << *this << std::endl;
+
+		bool isConflict_ = isConflictFast(col_, row_, board);
+		if (!isConflict_ && col_ == board.size() - 1)
+			return true;
+		else if (!isConflict_ && col_ < board.size() - 1)
+		{
+			col.push(0);
+			board[col.top()][col.size() - 1] = Q;
+		}
+		else
+		{
+			while (!col.empty() && col.top() == board.size() - 1)
+			{
+				board[col.top()][col.size() - 1] = NO_Q;
+				col.pop();
+			}
+			if (col.empty()) return false;
+			else {
+				board[col.top()][col.size() - 1] = NO_Q;
+				col.top()++;
+				board[col.top()][col.size() - 1] = Q;
+			}
+		}
+	}
+	return false;
+}*/
+
+/*ostream& operator << (ostream& outs, const Nqueen& obj)
+{
+	for (int i = 0; i < obj.board.size(); i++) {
+		for (int j = 0; j < obj.board.size(); j++) {
+			outs << '|';
+			if (obj.board[j][i] == Nqueen::NO_Q)
+				outs << '_';
+			else if (obj.board[j][i] == Nqueen::Q)
+				outs << 'Q';
+
+		}
+		outs << '|' << '\n';
+	}
+	return outs;
+}*/
+
+#include<iostream>
+using namespace std;
+
+Nqueen::Nqueen(/*std::vector<std::vector<int>> board*/):board{ board } {}
+
+void Nqueen::setSize(int dimensions) {
+	size = dimensions;
+}
+
+void Nqueen::printBoard() {
+	for (int i = 0; i < size; i++) {
+		for (int k = 0; k < size; k++)
+			cout << board[i][k] << " ";
+		cout << endl;
+	}
+}
+
+bool Nqueen::solve(int column) {
+	if (column >= size)
+		return true;
+	for (int i = 0; i < size; i++) {
+		if (isValid(i, column)) {
+			board[i][column] = 1;
+			if (solve(column + 1))
+				return true;
+			board[i][column] = 0;
+		}
+	}
+	return false;
+}
+
+bool Nqueen::isConflict() {
+	for (int i = 0; i < size; i++)
+		for (int k = 0; k < size; k++)
+			board[i][k] = 0;
+	if (solve(0) == false) {
+		cout << "Solution failed";
+		return false;
+	}
+	printBoard();
+	return true;
+}
+
+bool Nqueen::isValid(int row, int col) {
+	for (int i = 0; i < col; i++)
+		if (board[row][i])
+			return false;
+	for (int i = row, k = col; i >= 0 && k >= 0; i--, k--)
+		if (board[i][k])
+			return false;
+	for (int i = row, k = col; k >= 0 && i < size; i++, k--)
+		if (board[i][k])
+			return false;
+	return true;
+}

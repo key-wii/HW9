@@ -30,12 +30,18 @@
     <ClInclude Include="guessNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="nqueens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="guessNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nqueens.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
