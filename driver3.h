@@ -17,6 +17,8 @@ void option3()
 	int dimensions = inputInteger("\nEnter the board's dimensions(1..100): ", 1, 100);
 	Nqueen bboard;
 	bboard.setSize(dimensions);
+	bboard.initializeBoard();
+	bboard.solve(0);
 	bboard.printBoard();
 
 	/*int Q = 1;

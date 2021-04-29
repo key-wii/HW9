@@ -56,6 +56,7 @@ public:
 	bool solve(int col);
 	bool isConflict();
 	bool isValid(int row, int col);
+	void initializeBoard();
 private:
 	std::vector<std::vector<int>> board;
 	int size;
