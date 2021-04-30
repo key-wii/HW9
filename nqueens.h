@@ -1,4 +1,4 @@
-// Participants: Christopher
+// Participants: Christopher, Andrew
 // Date: 04-23-21
 // Description: nqueen header
 
@@ -10,39 +10,29 @@ using namespace std;
 
 class Nqueen
 {
-public:/*
-	//preconditions: a Nqueens object, and a first move
-	//postcondtions: returns true when a solution is found and false when it is not
-	bool solve();
-	//preconditions: an Nqueens object, and solve is running
-	//postconditions: returns true if a generated queen conflicts with another, false if not	
-	bool isConflict();
-	//preconditions: an Nqueens object, and solve is running
-	//postconditions: returns true if a generated queen conflicts with another, false if not, but faster
-	bool isConflictFast(int col, int row, std::vector<std::vector<int>>& board);*/
-	
+public:
+
 	//preconditions: n/a
-	//postconditions: creates a Nqueens object with its board as the passed in vector
+	//postconditions: creates a Nqueens object
 	Nqueen();
-	//preconditions: 
-	//postconditions: 
+	//preconditions: a new size
+	//postconditions: sets the size to dimensions
 	void setSize(int dimensions);
-	//preconditions: 
-	//postconditions: 
+	//preconditions: an nqueens object
+	//postconditions: prints the board
 	void printBoard();
-	//preconditions: 
-	//postconditions: 
+	//preconditions: an nqueens object, a column(0)
+	//postconditions: recursivly solves the nqueens problem. returns false if no solution
 	bool solve(int col);
-	//preconditions: 
-	//postconditions: 
-	bool isConflict();
-	//preconditions: 
-	//postconditions: 
+	//preconditions: an nqueens object and a row,rol to potentially place a queen in
+	//postconditions: returns true if the queen can be placed, false if not
 	bool isValid(int row, int col);
-	//preconditions: 
-	//postconditions: 
+	//preconditions: An nqueens object
+	//postconditions: will set the boards vector up equal to user input
 	void initializeBoard();
 private:
 	std::vector<std::vector<int>> board;
 	int size;
+	int first;
+	int queens;
 };
