@@ -3,15 +3,18 @@
 //Description: Guess number using Interation and Recursion Implementation
 
 #include "guessNumber.h"
-
+//Preconditions: N/A
+//Postconditions:creates a default guessnumber object
 GuessNumber::GuessNumber() : count(0)
 {}
-
+//Preconditions: a guessNumber object
+//Postconditions: resets the count
 void GuessNumber::resetCount()
 {
 	count = 0;
 }
-
+//Preconditions: a guessNumber object, the low and high ends
+//Postconditions: runs class version of the iterative guessing game
 void GuessNumber::InterativeGuess(int low, int high)
 {
 	int guessNumber = 0;
@@ -39,7 +42,8 @@ void GuessNumber::InterativeGuess(int low, int high)
 	cout << "\nYour number must be " << guessNumber << ".";
 	cout << "\nNumber of guesses: " << count << "\n\n";
 }
-
+//Preconditions: a guessNumber object, the low and high ends
+//Postconditions: runs class version of the recursive guessing game
 void GuessNumber::RecursiveGuessing(int low, int high)
 {
 	count++;
