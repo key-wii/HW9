@@ -4,9 +4,9 @@
 
 #include "nqueens.h"
 #include<iostream>
-using namespace std;
 #include <vector>
-Nqueen::Nqueen(/*std::vector<std::vector<int>> board*/):board{ board },size(0) {}
+using namespace std;
+Nqueen::Nqueen():board{ board },size(0) {}
 
 void Nqueen::setSize(int dimensions) {
 	size = dimensions;
