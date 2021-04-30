@@ -18,6 +18,9 @@ void option3()
 	Nqueen bboard;
 	bboard.setSize(dimensions);
 	bboard.initializeBoard();
-	bboard.solve(0);
-	bboard.printBoard();
+	if (bboard.solve(0))
+		bboard.printBoard();
+	else
+		cout << "\nThere is no solution with the input parameters!";
+	
 }
