@@ -9,9 +9,11 @@ using namespace std;
 
 #include "input.h"
 #include "guessNumber.h"
-
+//Preconditions: the low and high range
+//Postconditions: runs the iterative version of the guessing game
 void IterativeGuessing(int low, int high);
-
+//Preconditions: the low range, high range and count
+//Postconditions: runs the recursive  version of the guessing game
 void RecursiveGuessing(int low, int high, int& count);
 
 //Precondition: N/A
