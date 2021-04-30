@@ -18,18 +18,17 @@ public:
 	//preconditions: a new size
 	//postconditions: sets the size to dimensions
 	void setSize(int dimensions);
-	//preconditions: 
-	//postconditions: 
+	//preconditions: an nqueens object
+	//postconditions: prints the board
 	void printBoard();
-	//preconditions: 
-	//postconditions: 
+	//preconditions: an nqueens object, a column(0)
+	//postconditions: recursivly solves the nqueens problem. returns false if no solution
 	bool solve(int col);
-	//preconditions: 
-	//postconditions: 
-	
+	//preconditions: an nqueens object and a row,rol to potentially place a queen in
+	//postconditions: returns true if the queen can be placed, false if not
 	bool isValid(int row, int col);
-	//preconditions: 
-	//postconditions: 
+	//preconditions: An nqueens object
+	//postconditions: will set the boards vector up equal to user input
 	void initializeBoard();
 private:
 	std::vector<std::vector<int>> board;

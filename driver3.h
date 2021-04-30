@@ -1,4 +1,4 @@
-// Participants: Christopher
+// Participants: Christopher, Andrew
 // Date: 04-23-21
 // Description: file containing Drivers for option3(NQueens)
 #pragma once
